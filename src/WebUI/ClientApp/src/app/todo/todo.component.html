@@ -77,7 +77,7 @@
 <ng-template #listOptionsModalTemplate>
     <div class="modal-header">
         <h4 class="modal-title">List Options</h4>
-        <button type="button" class="btn-close close" aria-label="Close" (click)="listOptionsModalRef.hide()">
+        <button type="button" class="btn-close close" aria-label="Close" (click)="listOptionsModalRef!.hide()">
             <span aria-hidden="true" class="visually-hidden">&times;</span>
         </button>
     </div>
@@ -98,7 +98,7 @@
                     (click)="confirmDeleteList(deleteListModalTemplate)">Delete</button>
             </div>
             <div class="float-end">
-                <button class="btn btn-default" (click)="listOptionsModalRef.hide()">Cancel</button>
+                <button class="btn btn-default" (click)="listOptionsModalRef!.hide()">Cancel</button>
                 <button class="btn btn-primary" (click)="updateListOptions()">Update</button>
             </div>
         </div>
@@ -108,7 +108,7 @@
 <ng-template #itemDetailsModalTemplate>
     <div class="modal-header">
         <h4 class="modal-title">Item Details</h4>
-        <button type="button" class="btn-close close" aria-label="Close" (click)="itemDetailsModalRef.hide()">
+        <button type="button" class="btn-close close" aria-label="Close" (click)="itemDetailsModalRef!.hide()">
             <span aria-hidden="true" class="visually-hidden">&times;</span>
         </button>
     </div>
@@ -138,10 +138,10 @@
     <div class="modal-footer">
         <div class="clearfix">
             <div class="float-start">
-                <button class="btn btn-default text-danger" (click)="deleteItem(selectedItem)">Delete</button>
+                <button class="btn btn-default text-danger" (click)="deleteItem(selectedItem!)">Delete</button>
             </div>
             <div class="float-end">
-                <button class="btn btn-default" (click)="itemDetailsModalRef.hide()">Cancel</button>
+                <button class="btn btn-default" (click)="itemDetailsModalRef!.hide()">Cancel</button>
                 <button class="btn btn-primary" (click)="updateItemDetails()">Update</button>
             </div>
         </div>
@@ -151,7 +151,7 @@
 <ng-template #deleteListModalTemplate>
     <div class="modal-header">
         <h4 class="modal-title">Delete "{{ selectedList?.title }}"?</h4>
-        <button type="button" class="btn-close close" aria-label="Close" (click)="deleteListModalRef.hide()">
+        <button type="button" class="btn-close close" aria-label="Close" (click)="deleteListModalRef!.hide()">
             <span aria-hidden="true" class="visually-hidden">&times;</span>
         </button>
     </div>
@@ -163,7 +163,7 @@
     </div>
     <div class="modal-footer">
         <div class="text-right">
-            <button type="button" class="btn btn-default" (click)="deleteListModalRef.hide()">Cancel</button>
+            <button type="button" class="btn btn-default" (click)="deleteListModalRef!.hide()">Cancel</button>
             <button type="button" class="btn btn-danger" (click)="deleteListConfirmed()">Delete</button>
         </div>
     </div>
