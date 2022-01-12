@@ -18,7 +18,7 @@ public static class DbContextFactory
             new OperationalStoreOptions());
 
         var context = new ApplicationDbContext(
-            options, operationalStoreOptions);
+            options, operationalStoreOptions, currentUserService: null);
 
         var initialiser = new ApplicationDbContextInitialiser(context);
 

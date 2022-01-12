@@ -15,6 +15,7 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
 import { FontAwesomeModule,  FaIconLibrary  } from '@fortawesome/angular-fontawesome';
 import { TodoComponent } from './todo/todo.component';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
     ])
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
+    BsModalService
   ],
   bootstrap: [AppComponent]
 })
